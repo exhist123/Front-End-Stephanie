@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height:100vh ;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(49, 49, 222);
+    }
+    form{
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 25px;
+        background-color: #fff;
+        border-radius: 8px;
+        gap:20px
+
+    }
+    legend{
+        font-size: 18px;
+        font-weight:bold;
+        font-family:'Calibri'; 
+    }
+    legend span{
+        padding-bottom: 1px;
+        border-bottom: 3px solid rgb(49, 49, 222);
+    }
+    input{
+        padding: 8px 16px;
+        border:1px outset rgb(49, 49, 222); 
+        border-radius: 4px;
+        color:rgb(116, 116, 178);
+        outline: none;
+    }
+    label{
+        color:rgb(49, 49, 222);
+        font-size: 14px;
+    }
+    input[type="submit"]{
+        background-color:rgb(49, 49, 222);
+        color:#fff;
+        border:none;
+        cursor: pointer;
+    }
+    p{
+        text-align: center;
+    }
+    p a{
+        text-decoration: none;
+        margin-left: 2px;
+        columns:rgb(49, 49, 222);
+    }
+    .error{
+        color: red;
+        font-size: 12px;
+    }
+
+</style>
+<body>
+    <form>
+        <legend>
+            <span>Lo</span>gin Form
+        </legend>
+        
+        <div class="error"></div>
+        <input type="email" name="email" placeholder="Enter your email" id="email">
+        <div class="error"></div>
+        <input type="password" name="password" placeholder="Create password" id="password">
+        <input type="submit" value="Login now" id="register" >
+        <p>Don't have an account?<a href="index.html">Signup now</a></p>
+    </form>
+    <script>
+        function login(id){
+        //defines a function named login
+            return document.getElementById(id)
+        }// looks for an html document with id
+    
+        // declaring the variable and calling the function
+        let email = login("email");
+        let password = login("password");
+        let register = login("register");
+        let log = false;
+
+        
+
+        register.addEventListener("click", function(e) { 
+            e.preventDefault();
+            let error = document.querySelectorAll(".error");
+            let log = true;
+
+            // email validation
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if(email.value == "") {
+                error[0].innerHTML = "Email is Required";
+                log = false;
+            } else if(!emailRegex.test(email.value)) {
+                error[0].innerHTML = "Invalid Email";
+                log = false;
+            } else {
+                error[0].innerHTML = "";
+            }
+
+            // password validation
+            let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            if(password.value == "") {
+                error[1].innerHTML = "Password is Required";
+                log = false;
+            } else if(!passwordRegex.test(password.value)) {
+                error[1].innerHTML = "Password must be 6-20 characters long, contain at least one uppercase letter, one lowercase letter, and one number.";
+                log = false;
+            } else {
+                error[1].innerHTML = "";
+            }
+
+            if (log == true) {
+                window.location.href = "signin.html";
+            }
+        });
+           
+    </script>
+
+</body>
+</html>
