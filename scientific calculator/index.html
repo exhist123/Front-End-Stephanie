@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Casio</h1>
+    <input type="text" id="display" class="display"/>
+    
+    <div class="buttons">
+        <!-- Scientific Functions -->
+      <button type="button" class="func" data-value="√">√</button>
+      <button type="button" class="func" data-value="^">xʸ</button>
+      <button type="button" class="func" data-value="sin">sin</button>
+      <button type="button" class="func" data-value="cos">cos</button>
+      <button type="button" class="func" data-value="tan">tan</button>
+      <button type="button" class="func" data-value="log">log</button>
+      <button type="button" class="func" data-value="exp">exp</button>
+      <button type="button" class="func" data-value="π">π</button>
+      <button type="button" class="func" data-value="(">(</button>
+      <button type="button" class="func" data-value=")">)</button>
+      <button type="button" class="func" data-value="!">n!</button>
+
+      <!-- Basic Controls -->
+     <button type="button" class="operator" data-value="DEL">DEL</button>
+      <button type="button" class="operator" data-value="AC">AC</button>
+      <button type="button" class="operator" data-value="%">%</button>
+      <button type="button" class="operator" data-value="/">/</button>
+      <button type="button" class="operator" data-value="*">*</button>
+      <button type="button" class="operator" data-value="-">-</button>
+      <button type="button" class="operator" data-value="+">+</button>
+      <button type="button" class="operator" data-value="=">=</button>
+      <button type="button" class="operator" data-value="^">^</button>
+
+      <!-- Numbers -->
+      <button type="button" class="numbers" data-value="9">9</button>
+      <button type="button" class="numbers" data-value="8">8</button>
+      <button type="button" class="numbers" data-value="7">7</button>
+      <button type="button" class="numbers" data-value="6">6</button>
+      <button type="button" class="numbers" data-value="5">5</button>
+      <button type="button" class="numbers" data-value="4">4</button>
+      <button type="button" class="numbers" data-value="3">3</button>
+      <button type="button" class="numbers" data-value="2">2</button>
+      <button type="button" class="numbers" data-value="1">1</button>
+      <button type="button" class="numbers" data-value="0">0</button>
+      <button type="button" class="numbers" data-value=".">.</button>
+    </div>
+  </div>
+
+  <script src="calcul.js"></script>
+</body>
+</html>
